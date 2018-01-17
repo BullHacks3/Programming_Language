@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>
+			Function Example </title>
+	</head>
+		<script>
+			var b=10;
+			function change()
+				{
+				var selecting=document.getElementById("selecting");
+				var optionsvalue=selecting.options[selecting.selectedIndex].value;
+//			alert(optionsvalue);
+
+                                    if(optionsvalue==1)
+					forLoop();
+				    if(optionsvalue==2)
+					whileLoop();
+				   if(optionsvalue==3)
+                                        {
+					var obj=new add(10,20);
+ 					obj.Sum();
+					}
+					/*switch(optionsvalue):
+					{
+					case 1:
+						
+						forLoop();
+						break;
+					case 2:
+						whileLoop();
+						break;
+					case 3:
+						add(10,20);
+						break;	
+		                        }*/
+                               }
+			function forLoop()
+				{
+					document.write("Forloop Starts Executing");
+				 for(i=0;i<b;i++)
+					{
+					document.write("The value of i is:- " + i + "<br />");
+    					}
+				}
+			function whileLoop()
+				{
+					document.write("While Loop Starts Executing");
+				 var i=0;
+				while(i<b)
+					{
+						document.write("The value of i is:- " + i + "<br/>");
+ 						i++;
+					}
+				}
+
+
+			function add(a,b)
+			{
+				document.write("Add function starts executing");
+				this.a=a;
+				this.b=b;
+				this.Sum=function()
+					{
+					alert("The Sum of Two Numbers i.e :- " + this.a + "+" +  this.b + "=" + (this.a+this.b) )
+  					}
+			}
+
+			</script>
+<body>
+			<p align="CENTER"><bold>MENU FOR FUNTIONS</bold></p>
+			
+ 			<select id ="selecting" onchange="change()">Select Any One Function To Execute
+				<option>Select Any One Function To Execute</option>
+				<option value=1 >ForLoop</option>
+				<option value=2>WhileLoop</option>
+				<option value=3>Add Function </option>
+			</select>
+		</body>
+</html>
